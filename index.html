@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>웨더웨어</title>
-
 <link rel="stylesheet" href="/weatherwear-portfolio/css/work_reset.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,9 +12,10 @@
 
 <script>
 $(function() {
-
+    
+/* Scroll */
 $(window).on("scroll", function() {
-
+    
     var sct = $(window).scrollTop();
     var sec1Top = $("#sec1").offset().top;
     var sec2Top = $("#sec2").offset().top;
@@ -24,115 +24,234 @@ $(window).on("scroll", function() {
     var sec5Top = $("#sec5").offset().top;
     var sec6Top = $("#sec6").offset().top;
     var sec7Top = $("#sec7").offset().top;
+    // var biTop = $("#bi").offset().top;
 
+// Section
     if(sct >= sec1Top-100 && sct < sec2Top-100){
         $("#sec1 #img").stop().animate({"margin-top":0, opacity:1}, 300, "easeOutQuad");
         $("#sec1 #text").stop().animate({"margin-left":0, opacity:1}, 500, "easeOutQuad");
     } else{
         $("#sec1 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
-        $("#sec1 #text").stop().animate({"margin-left":'80px', opacity:0}, 100);
+        $("#sec1 #text").stop().animate({"margin-left":'80px', opacity:0}, 100, "easeOutQuad");
     }
-
     if(sct >= sec2Top-100 && sct < sec3Top-100){
         $("#sec2 #img").eq(0).stop().animate({"margin-top":0, opacity:1}, 300, function() {
             $("#sec2 #img").eq(1).stop().animate({"margin-top":0, opacity:1}, 400);
         });
-        $("#sec2 #text").stop().animate({"margin-left":0, opacity:1}, 500);
+        $("#sec2 #text").stop().animate({"margin-left":0, opacity:1}, 500, "easeOutQuad");
     } else{
         $("#sec2 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
         $("#sec2 #text").stop().animate({"margin-left":'-80px', opacity:0}, 100);
     }
-
     if(sct >= sec3Top-100 && sct < sec4Top-100){
-        $("#sec3 #img").stop().animate({"margin-top":0, opacity:1}, 300);
-        $("#sec3 #text").stop().animate({"margin-left":0, opacity:1}, 500);
+        $("#sec3 #img").stop().animate({"margin-top":0, opacity:1}, 300, "easeOutQuad");
+        $("#sec3 #text").stop().animate({"margin-left":0, opacity:1}, 500, "easeOutQuad");
     } else{
         $("#sec3 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
         $("#sec3 #text").stop().animate({"margin-left":'-80px', opacity:0}, 100);
     }
-
     if(sct >= sec4Top-100 && sct < sec5Top-100){
-        $("#sec4 #img").eq(0).stop().animate({"margin-top":0, opacity:1}, 300, function() {
-            $("#sec4 #img").eq(1).stop().animate({"margin-top":0, opacity:1}, 350, function() {
-                $("#sec4 #img").eq(2).stop().animate({"margin-top":0, opacity:1}, 400);
+        $("#sec4 #img").eq(0).stop().animate({"margin-top":0, opacity:1}, 300, "easeOutQuad", function() {
+            $("#sec4 #img").eq(1).stop().animate({"margin-top":0, opacity:1}, 350, "easeOutQuad", function() {
+                $("#sec4 #img").eq(2).stop().animate({"margin-top":0, opacity:1}, 400, "easeOutQuad");
             });
         });
-        $("#sec4 #text").stop().animate({"margin-left":0, opacity:1}, 600);
+        $("#sec4 #text").stop().animate({"margin-left":0, opacity:1}, 600, "easeOutQuad");
     } else{
         $("#sec4 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
         $("#sec4 #text").stop().animate({"margin-left":'80px', opacity:0}, 100);
     }
-
     if(sct >= sec5Top-100 && sct < sec6Top-100){
-        $("#sec5 #img").stop().animate({"margin-top":0, opacity:1}, 300);
-        $("#sec5 #text").stop().animate({"margin-left":0, opacity:1}, 300);
+        $("#sec5 #img").stop().animate({"margin-top":0, opacity:1}, 300, "easeOutQuad");
+        $("#sec5 #text").stop().animate({"margin-left":0, opacity:1}, 300, "easeOutQuad");
     } else{
         $("#sec5 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
         $("#sec5 #text").stop().animate({"margin-left":'-80px', opacity:0}, 100);
     }
-
     if(sct >= sec6Top-100 && sct < sec7Top-100){
-        $("#sec6 #img").eq(0).stop().animate({"left":"0px", opacity:1}, 300);
-        $("#sec6 #img").eq(1).stop().animate({"right":"0px", opacity:1}, 300);
+        $("#sec6 #img").eq(0).stop().animate({"left":"0px", opacity:1}, 300, "easeOutQuad");
+        $("#sec6 #img").eq(1).stop().animate({"right":"0px", opacity:1}, 300, "easeOutQuad");
     } else{
-        $("#sec6 #img").eq(0).stop().animate({"left":"-200px", opacity:0}, 300);
-        $("#sec6 #img").eq(1).stop().animate({"right":"-200px", opacity:0}, 300);
+        $("#sec6 #img").eq(0).stop().animate({"left":"-200px", opacity:0}, 300, "easeOutQuad");
+        $("#sec6 #img").eq(1).stop().animate({"right":"-200px", opacity:0}, 300, "easeOutQuad");
     }
 
     if(sct <= sec7Top-100){
-        $("#sec7 #img").stop().animate({"margin-top":0, opacity:0}, 300);
+        $("#sec7 #img").stop().animate({"margin-top":0, opacity:0}, 300, "easeOutQuad");
     } else{
-        $("#sec7 #img").stop().animate({"margin-top":"100px", opacity:1}, 300);
+        $("#sec7 #img").stop().animate({"margin-top":"100px", opacity:1}, 300, "easeOutQuad");
     }
 
-});
+
+    
+}); // Scroll End
 $(window).trigger("scroll");
 
-});
+})// end
 </script>
+
+<style>
+
+/* #top_btn div {background-color: #15a6ff !important;} */
+    
+#container {background-color: #c7f6ff;}
+
+#contents {width: 100vw;}
+
+#contents section {width: 100%; height: 80vh; position: relative;}
+#contents #img {width: 35vh; height: 70vh; margin-top: 100px; position: absolute; opacity: 0;}
+#contents #img img {width: 100%;}
+    
+#contents #text {position: absolute; opacity: 0;}
+#contents #text h1 {height: 2vw; margin-bottom: 1.25vw; font: 600 2vw/2vw 'Noto Sans KR'; color: #1a353f; position: relative;}
+#contents #text h1 span {display: block; font-size: 1.25vw; color: #000; position: absolute; top: 0.9vw; left: 8vw;}   
+#contents #text p {margin-top: 2vw; margin-bottom: 0.5vw; font: 400 1vw/1.625 'Noto Sans KR'; color: #1a353f;}
+p {color:black;}
+span {color:black;}
+#sec1 #img:nth-child(1) {top:30vh; left: 27vw; z-index: 1;}
+#sec1 #img:nth-child(2) {top: 18vh; left: 17vw; z-index: 0;}
+#sec1 #text {margin-left: 80px; top: 20vh; left: 57vw;}
+#sec1 #icon li {display: inline-block; width: 1.25vw; height: 1.25vw; margin: 1.5vh 1.25vw 0 0;} 
+#sec1 #icon li img {width: 100%; }
+#right_img {position: relative; top: 5vh; right: 0vw;}
+
+#sec2 #img:nth-child(1) {top: 10vh; left: 48vw;}
+#sec2 #img:nth-child(2) {top: 22vh; left: 70vw;}
+#sec2 #text {margin-left: -80px; top: 20vh; left: 18vw;}
+#pattern {position: relative; top: 0vh; left: -18vw;} 
+
+#sec3 #img:nth-child(1) {top: 20vh; left: 55vw; z-index: 1;}
+#sec3 #img:nth-child(2) {opacity: 0.7; top: 45vh; left: 70vw; z-index: 0;}
+#sec3 #text {margin-left: -80px; top: 20vh; left: 18vw;}
+#phone {position: relative; top: 6vh; left: 0vw;} 
+    
+#sec4 #img:nth-child(1) {top: 6vh; left: 12vw; z-index: 0;}
+#sec4 #img:nth-child(2) {top: 6vh; left: 24vw; z-index: 1;}
+#sec4 #img:nth-child(3) {top: 6vh; left: 36vw; z-index: 2;}
+#sec4 #text {margin-left: 80px; top: 12vh; left: 62vw;}
+#pattern2 {position: relative; top: 5vh; right: 0vw;}
+    
+#sec5 #img:nth-child(1) {top: 4vh; left: 51vw; z-index: 1;}
+#sec5 #img:nth-child(2) {opacity: 0.7; top: 10vh; left: 70vw; z-index: 0;}
+#sec5 #text {top: 15vh; left: 18vw;}
+#phone2 {position: relative; top: 0vh; left: 0vw;} 
+
+#sec6 #img:nth-child(1) {top: 0vh; left: 0vw; width:50%; float: left;}
+#sec6 #img:nth-child(2) {top: 0vh; right: 0vw; width: 50%; float: right;}
+
+#sec7 {width: 100%; height: 200vw; min-height: 1500px; position: relative; top:60vh; left:10vw;}
+#sec7 img {width: 80vw; min-width: 1500px; margin: auto; position: absolute; left: 0; right: 0;}
+
+#bi {width: 100%; height: 200vw; min-height: 2000px; position: relative; top:20vh;}
+#bi img {width: 80vw; min-width: 800px; margin: auto; position: absolute; left: 0; right: 0;}
+h1 img {margin-top:-60px;}
+</style>
 </head>
 
 <body>
 
 <div id="container">
-
+<!-- HEADER -->
 <header>
 <h1 id="logo">
-<a href="index.html">
-<img src="/weatherwear-portfolio/images1/logo.png" alt="header">
-</a>
+<a href="index.html"><img src="images1/logo.png" alt="header"></a>
 </h1>
 </header>
 
+<!-- TOP BUTTON -->
 <div id="top_btn">
 <div></div><div></div>
 </div>
 
+<!-- FRONT -->
 <div id="front">
-<div id="img"><img src="/weatherwear-portfolio/images1/시작페이지phone.jpg"></div>
+<div id="img"><img src="images1/intro-phone.jpg" alt="up"></div>
 <div id="title"><p>날씨 맞춤 코디 '웨더웨어'
-<span>UX/UI디자인 | 3조 최고♥</span><br>
-<span><img src="/weatherwear-portfolio/images1/logo.png" width="70%"></span>
+<span>UX/UI디자인&nbsp; |&nbsp; 3조 최고♥</span><br>
+<span><img src="images1/logo.png" alt="header" width="70%"></span>
 </p></div>
-<div id="click_arr"><img src="/weatherwear-portfolio/images1/scroll.png"></div>
+<div id="click_arr"><img src="images1/scroll.png" alt=""></div>
 </div>
 
+<!-- CONTENT --> 
 <div id="contents">
 
 <section id="sec1">
-<div id="img"><img src="/weatherwear-portfolio/images1/1페이지캘린더핑크.jpg"></div>
-<div id="img"><img src="/weatherwear-portfolio/images1/1페이지날씨(흐림).jpg"></div>
+<div id="img"><img src="images1/sec1-calendar-pink.jpg" alt="up"></div>
+<div id="img"><img src="images1/sec1-weather-cloudy.jpg" alt="up"></div>
 <div id="text">
-<h1><img src="/weatherwear-portfolio/images1/logo.png" width="25%"><span>코디추천 앱</span></h1>
+<h1><img src="images1/logo.png" alt="" width="25%"><span>코디추천 앱</span></h1>
 <p>패셔니스트들의 날씨 확인 및 일정 관리 어플이자 <br>
-개인 맞춤형 '오늘의 코디' 추천 애플리케이션입니다.</p>
-<div id="right_img"><img src="/weatherwear-portfolio/images1/1페이지right.png"></div>
+    개인 맞춤형 '오늘의 코디' 추천 애플리케이션입니다.</p>
+<div id="right_img"><img src="images1/sec1-right.png" alt=""></div>
 </div>
 </section>
 
-<!-- 나머지 섹션 동일 방식으로 유지 -->
+<section id="sec2">
+<div id="img"><img src="images1/sec2-weather-rain.png" alt="up"></div>
+<div id="img"><img src="images1/sec2-weather-cloudy.jpg" alt="up"></div>
+<div id="text">
+<h1><img src="images1/logo.png" alt="" width="25%"><span>날씨 정보 확인</span></h1>
+<p>실시간 날씨 정보 제공으로<br>
+    오늘의 기상상황을 손쉽게 확인할 수 있습니다.</p>
+<div id="pattern"><img src="images1/pattern1.png" alt=""></div>
+</div>
+</section>
+
+<section id="sec3">
+<div id="img"><img src="images1/sec3-main-male.jpg" alt="up"></div>
+<div id="img"><img src="images1/sec3-main-female.jpg" alt="up"></div>
+<div id="text">
+<h1><img src="images1/logo.png" alt="" width="25%"><span>블루ver / 핑크ver 2가지 버전</span></h1>
+<p>로그인할 때 2가지 색깔 버전 중 1택!<br>
+    취향에 맞는 디자인으로 앱을 이용할 수 있습니다.<br>
+메인페이지에 오늘의 날씨와 일정을 고려한 오늘의 코디가 나옵니다.<br>
+검색탭에 기분이나 요청사항을 입력하면 반영해서 새로운 코디가 띠링!</p>
+    <div id="phone"><img src="images1/sec3-phone.png" alt=""></div>
+</div>
+</section>
+
+<section id="sec4">
+<div id="img"><img src="images1/sec4-calendar-pink.jpg" alt="up"></div>
+<div id="img"><img src="images1/sec4-closet-pink.jpg" alt="up"></div>
+<div id="img"><img src="images1/sec4-closet-blue.jpg" alt="up"></div>
+
+<div id="text">
+<h1><img src="images1/logo.png" alt="" width="25%"><span>캘린더페이지 / 옷장페이지</span></h1>
+<p>캘린더 연동으로 앱에서 일정을 한눈에 볼 수 있고<br>
+    내 옷장을 사진으로 찍어서 등록하여 옷장 속 숨어있던 옷을<br>
+    100% 활용할 수 있습니다!</p>
+<div id="pattern2"><img src="images1/pattern2.png" alt=""></div>
+</div>
+</section>
+
+<section id="sec5">
+<div id="img"><img src="images1/sec5-feed-male.jpg" alt="up"></div>
+<div id="img"><img src="images1/sec5-feed-female.png" alt="up"></div>
+<div id="text">
+<h1><img src="images1/logo.png" alt="" width="25%"><span>MY PAGE</span></h1>
+<p>커뮤니티 페이지에서 프로필 관리가 가능하며 나의 패션 피드를 꾸미고<br>
+    새로운 패션피플즈와 fiends가 될 수 있습니다! <br>
+    매일 업데이트 되는 weather wear's pick에도 도전해보세요!</p>
+ <div id="phone"><img src="images1/sec5-phone.png" width="560px" height="460px" alt=""></div>
+</div>
+</section>
+
+<section id="sec6">
+<div id="img"><img src="images1/bg-blue-logo-pink.jpg" alt="up"></div>
+<div id="img"><img src="images1/bg-pink-logo-blue.jpg" alt="up"></div>
+</section>
+
+<section id="sec7">
+<div id="img"><img src="images1/last-slide.jpg" alt="up"></div>
+</section>
+
+<!-- <div id="bi">
+<img src="images/text.png" alt="up">
+</div> -->
 
 </div>
+
 </div>
 </body>
 </html>
