@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+/* RESET */
+* {margin: 0; padding: 0; font-family: 'Prompt', 'Noto Sans KR', sans-serif; color: #fff;}
+ul, li {list-style: none;}
+a {display: block; width: 100%; height: 100%; text-decoration: none; color: inherit;}
+body {overflow-x: hidden;}
+
+/* HEADER */
+header {width: 100%; height: 80px; padding: 25px 70px; margin: 0 auto; box-sizing: border-box; position: fixed; top: 0; left: 0; z-index: 10;}
+header #logo {width: 100px; height: 100px; cursor: pointer; position: absolute; top: 27px; left: 70px; transition: 1s all; z-index: 2;
+transform-origin: 50% 50%;}
+header #logo img {width: 100%; vertical-align: top;}
+
+header #logo:hover {transform: rotate(360deg);}
+
+/* TOP BUTTON */
+#top_btn {width: 40px; height: 16px; cursor: pointer; position: fixed; right: 30px; bottom: 30px; z-index: 2; opacity: 0; transition: all 0.3s;}
+#top_btn div {width: 20px; height: 2px; background-color: #fff; position: absolute; top: 8px;}
+#top_btn div:nth-child(1) {transform: rotate(30deg); left: 18px;}
+#top_btn div:nth-child(2) {transform: rotate(-30deg); right: 18px;}
+    /* addClass */
+#top_btn.on {opacity: 0.8;}
+
+/* FRONT */
+#front {width: 100vw; height: 100vh; position: relative;}
+#front #img {width: 100%; height: 100%; background-color: #FD292F; position: absolute; top: 0; left: 0; z-index: 0; overflow: hidden;}
+#front #img img {width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transition: all 0.4s;}
+
+#front #title {width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;}
+#front #title p {width: fit-content; height: fit-content; font: 600 3vw 'Noto Sans KR'; position: absolute; top: 30vh; left: 7vw; transition: opacity 0.4s;}
+#front #title p span {display: block; font: 400 1.25vw 'Noto Sans KR';}
+#front #click_arr {width: 140px; height: 140px; margin: auto; cursor: pointer; position: absolute; left: 0; right: 0; bottom: 30px; z-index: 1;
+transition: all 1s;}
+
+#top_btn:hover {transform: scale(1.2); opacity: 1;}
+#front #click_arr:hover {transform: scale(1.2);}
+#front:hover #img img {transform: scale(1.05); opacity: 1;}
+    
+@keyframes move_arr {from {top: 3vw;} to {top: 4vw; opacity: 0;}}
+
+
