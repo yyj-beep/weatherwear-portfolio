@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>웨더웨어</title>
@@ -15,7 +15,9 @@
 
 <script>
 $(function() {
-  $(window).on("scroll", function() {
+
+$(window).on("scroll", function() {
+
     var sct = $(window).scrollTop();
     var sec1Top = $("#sec1").offset().top;
     var sec2Top = $("#sec2").offset().top;
@@ -26,131 +28,128 @@ $(function() {
     var sec7Top = $("#sec7").offset().top;
 
     if(sct >= sec1Top-100 && sct < sec2Top-100){
-      $("#sec1 #img").stop().animate({"margin-top":0, opacity:1}, 300);
-      $("#sec1 #text").stop().animate({"margin-left":0, opacity:1}, 500);
+        $("#sec1 #img").stop().animate({"margin-top":0, opacity:1}, 300);
+        $("#sec1 #text").stop().animate({"margin-left":0, opacity:1}, 500);
     } else{
-      $("#sec1 #img").stop().animate({"margin-top":"100px", opacity:0}, 100);
-      $("#sec1 #text").stop().animate({"margin-left":"80px", opacity:0}, 100);
+        $("#sec1 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
+        $("#sec1 #text").stop().animate({"margin-left":'80px', opacity:0}, 100);
     }
-  });
-  $(window).trigger("scroll");
+
+    if(sct >= sec2Top-100 && sct < sec3Top-100){
+        $("#sec2 #img").eq(0).stop().animate({"margin-top":0, opacity:1}, 300, function() {
+            $("#sec2 #img").eq(1).stop().animate({"margin-top":0, opacity:1}, 400);
+        });
+        $("#sec2 #text").stop().animate({"margin-left":0, opacity:1}, 500);
+    } else{
+        $("#sec2 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
+        $("#sec2 #text").stop().animate({"margin-left":'-80px', opacity:0}, 100);
+    }
+
+    if(sct >= sec3Top-100 && sct < sec4Top-100){
+        $("#sec3 #img").stop().animate({"margin-top":0, opacity:1}, 300);
+        $("#sec3 #text").stop().animate({"margin-left":0, opacity:1}, 500);
+    } else{
+        $("#sec3 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
+        $("#sec3 #text").stop().animate({"margin-left":'-80px', opacity:0}, 100);
+    }
+
+    if(sct >= sec4Top-100 && sct < sec5Top-100){
+        $("#sec4 #img").eq(0).stop().animate({"margin-top":0, opacity:1}, 300, function() {
+            $("#sec4 #img").eq(1).stop().animate({"margin-top":0, opacity:1}, 350, function() {
+                $("#sec4 #img").eq(2).stop().animate({"margin-top":0, opacity:1}, 400);
+            });
+        });
+        $("#sec4 #text").stop().animate({"margin-left":0, opacity:1}, 600);
+    } else{
+        $("#sec4 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
+        $("#sec4 #text").stop().animate({"margin-left":'80px', opacity:0}, 100);
+    }
+
+    if(sct >= sec5Top-100 && sct < sec6Top-100){
+        $("#sec5 #img").stop().animate({"margin-top":0, opacity:1}, 300);
+        $("#sec5 #text").stop().animate({"margin-left":0, opacity:1}, 300);
+    } else{
+        $("#sec5 #img").stop().animate({"margin-top":'100px', opacity:0}, 100);
+        $("#sec5 #text").stop().animate({"margin-left":'-80px', opacity:0}, 100);
+    }
+
+    if(sct >= sec6Top-100 && sct < sec7Top-100){
+        $("#sec6 #img").eq(0).stop().animate({"left":"0px", opacity:1}, 300);
+        $("#sec6 #img").eq(1).stop().animate({"right":"0px", opacity:1}, 300);
+    } else{
+        $("#sec6 #img").eq(0).stop().animate({"left":"-200px", opacity:0}, 300);
+        $("#sec6 #img").eq(1).stop().animate({"right":"-200px", opacity:0}, 300);
+    }
+});
+$(window).trigger("scroll");
+
 });
 </script>
-
-<style>
-#container {background-color: #c7f6ff;}
-#contents section {width: 100%; height: 80vh; position: relative;}
-#contents #img {width: 35vh; height: 70vh; margin-top: 100px; position: absolute; opacity: 0;}
-#contents #img img {width: 100%;}
-#contents #text {position: absolute; opacity: 0;}
-p, span {color: black;}
-</style>
 </head>
 
 <body>
 
 <div id="container">
 
-<!-- HEADER -->
 <header>
-  <h1 id="logo">
-    <a href="index.html">
-      <img src="/weatherwear-portfolio/images1/logo.png" alt="logo">
-    </a>
-  </h1>
+<h1 id="logo">
+<a href="index.html">
+<img src="/weatherwear-portfolio/images1/logo.png" alt="header">
+</a>
+</h1>
 </header>
 
-<!-- FRONT -->
 <div id="front">
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/시작페이지phone.jpg" alt="">
-  </div>
-  <div id="title">
-    <p>
-      날씨 맞춤 코디 '웨더웨어'<br>
-      <img src="/weatherwear-portfolio/images1/logo.png" width="200">
-    </p>
-  </div>
-  <div id="click_arr">
-    <img src="/weatherwear-portfolio/images1/scroll.png" alt="">
-  </div>
+<div id="img">
+<img src="/weatherwear-portfolio/images1/시작페이지phone.jpg">
+</div>
+<div id="title">
+<p>날씨 맞춤 코디 '웨더웨어'</p>
+<span><img src="/weatherwear-portfolio/images1/logo.png" width="70%"></span>
+</div>
+<div id="click_arr">
+<img src="/weatherwear-portfolio/images1/scroll.png">
+</div>
 </div>
 
-<!-- CONTENT -->
 <div id="contents">
 
 <section id="sec1">
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/1페이지캘린더핑크.jpg">
-  </div>
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/1페이지날씨(흐림).jpg">
-  </div>
-  <div id="text">
-    <h1>
-      <img src="/weatherwear-portfolio/images1/logo.png" width="120">
-      <span>코디추천 앱</span>
-    </h1>
-    <p>날씨와 일정 기반 코디 추천 서비스</p>
-  </div>
+<div id="img"><img src="/weatherwear-portfolio/images1/1페이지캘린더핑크.jpg"></div>
+<div id="img"><img src="/weatherwear-portfolio/images1/1페이지날씨(흐림).jpg"></div>
 </section>
 
 <section id="sec2">
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/2페이지날씨(비).png">
-  </div>
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/2페이지날씨(흐림).jpg">
-  </div>
+<div id="img"><img src="/weatherwear-portfolio/images1/2페이지날씨(비).png"></div>
+<div id="img"><img src="/weatherwear-portfolio/images1/2페이지날씨(흐림).jpg"></div>
 </section>
 
 <section id="sec3">
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/3페이지메인페이지남자.jpg">
-  </div>
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/3페이지메인페이지여자.jpg">
-  </div>
+<div id="img"><img src="/weatherwear-portfolio/images1/3페이지메인페이지남자.jpg"></div>
+<div id="img"><img src="/weatherwear-portfolio/images1/3페이지메인페이지여자.jpg"></div>
 </section>
 
 <section id="sec4">
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/4페이지캘린터핑크.jpg">
-  </div>
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/4페이지옷장핑크.jpg">
-  </div>
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/4페이지옷장블루.jpg">
-  </div>
+<div id="img"><img src="/weatherwear-portfolio/images1/4페이지캘린터핑크.jpg"></div>
+<div id="img"><img src="/weatherwear-portfolio/images1/4페이지옷장핑크.jpg"></div>
+<div id="img"><img src="/weatherwear-portfolio/images1/4페이지옷장블루.jpg"></div>
 </section>
 
 <section id="sec5">
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/5페이지남자피드.jpg">
-  </div>
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/5페이지여자피드.png">
-  </div>
+<div id="img"><img src="/weatherwear-portfolio/images1/5페이지남자피드.jpg"></div>
+<div id="img"><img src="/weatherwear-portfolio/images1/5페이지여자피드.png"></div>
 </section>
 
 <section id="sec6">
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/블루배경핑크로고.jpg">
-  </div>
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/핑크배경블루로고.jpg">
-  </div>
+<div id="img"><img src="/weatherwear-portfolio/images1/블루배경핑크로고.jpg"></div>
+<div id="img"><img src="/weatherwear-portfolio/images1/핑크배경블루로고.jpg"></div>
 </section>
 
 <section id="sec7">
-  <div id="img">
-    <img src="/weatherwear-portfolio/images1/마지막슬라이드.jpg">
-  </div>
+<div id="img"><img src="/weatherwear-portfolio/images1/마지막슬라이드.jpg"></div>
 </section>
 
 </div>
 </div>
-
 </body>
 </html>
